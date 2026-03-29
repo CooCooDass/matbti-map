@@ -62,6 +62,9 @@ matbti-map/
 6. API integration and E2E tests
 </phase_4>
 
+
+
+
 ## 🚩 현재 진행 상황 (Phase 1-A)
 - 네이버 연동 완료됨.
 - 카카오 연동 완료됨.
