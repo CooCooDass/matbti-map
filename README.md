@@ -1,4 +1,4 @@
-<project_structure>
+#Project Structure
 ```text
 matbti-map/
 ├── backend/app/          # FastAPI 앱
@@ -15,7 +15,52 @@ matbti-map/
 │   └── lib/              # API 클라이언트, 유틸
 └── data/                 # seed 데이터, SQL 마이그레이션
 ```
-</project_structure>
+#Phase Plan
+<phase_1_a>
+## Phase 1-A (Week 1-2): Crawler + Supabase Integration (크롤러 + Supabase 연동)
+
+1. Implement `BaseScraper` abstract class
+2. Implement 3 Platform Scrapers (Kakao, Naver, Google)
+3. Set up local JSONL staging pipeline (`data/raw_listings.jsonl`에 임시 저장)
+4. Create Supabase DB schema migration with Alembic
+5. Implement Supabase bulk-push pipeline to `platform_listings` table (Supabase 일괄 푸시)
+</phase_1_a>
+
+<phase_1_b>
+## Phase 1-B (Week 3): Data Processing (데이터 처리)
+
+1. Entity Resolution logic (`entity_resolver.py`)
+2. Review LLM analysis pipeline (`review_processor.py`)
+3. Create review/restaurant embeddings -> load into pgvector (생성 → pgvector 적재)
+</phase_1_b>
+
+<phase_2>
+## Phase 2 (Week 4): MatBTI System (맛BTI 시스템)
+
+1. Survey API (`POST /api/taste/survey`)
+2. LLM Taste Profiling (`taste_analyzer.py`)
+3. Vectorize tastes -> `user_taste_profiles.taste_vector` (취향 벡터화)
+</phase_2>
+
+<phase_3>
+## Phase 3 (Week 5-6): RAG Recommendation Engine (RAG 추천 엔진)
+
+1. Hybrid Search (SQL Filter + Vector Similarity)
+2. Implement LangChain RAG chain (`chains.py`)
+3. Implement SSE streaming response
+4. Course planning feature
+</phase_3>
+
+<phase_4>
+## Phase 4 (Week 7-8): Frontend + Integration (프론트엔드 + 통합)
+
+1. Next.js project setup
+2. Kakao Map UI (Markers, clustering, overlays) (마커, 클러스터링, 오버레이)
+3. Chat interface (SSE Streaming)
+4. MatBTI survey UI (step-by-step wizard)
+5. Restaurant detail page
+6. API integration and E2E tests
+</phase_4>
 
 ## 🚩 현재 진행 상황 (Phase 1-A)
 - 네이버 연동 완료됨.
