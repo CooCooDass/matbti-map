@@ -1,3 +1,22 @@
+<project_structure>
+```text
+matbti-map/
+├── backend/app/          # FastAPI 앱
+│   ├── models/           # SQLAlchemy 모델
+│   ├── schemas/          # Pydantic 스키마
+│   ├── api/              # API 라우터
+│   ├── services/         # 비즈니스 로직
+│   ├── llm/              # LLM 체인, 프롬프트, 임베딩
+│   └── scrapers/         # 3대 플랫폼 크롤러
+├── frontend/src/         # Next.js 앱
+│   ├── app/              # App Router pages
+│   ├── components/       # React 컴포넌트
+│   ├── store/            # Zustand 스토어
+│   └── lib/              # API 클라이언트, 유틸
+└── data/                 # seed 데이터, SQL 마이그레이션
+```
+</project_structure>
+
 ## 🚩 현재 진행 상황 (Phase 1-A)
 - 네이버 연동 완료됨.
 - 카카오 연동 완료됨.
