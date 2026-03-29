@@ -1,0 +1,22 @@
+# Python-generated files
+__pycache__/
+*.py[oc]
+build/
+dist/
+wheels/
+*.egg-info
+
+# Virtual environments
+.venv
+
+# agent settings
+.agents
+.claude
+
+#docs
+docs/
+
+#test
+test_google_print.py
+test_naver_print.py
+test_kakao_print.py
